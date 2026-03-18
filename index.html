@@ -5,74 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Neo Kairos</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f9fc;
-      color: #1a1a1a;
-      line-height: 1.6;
-    }
+    /* Reset & Fonts */
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a1a; line-height: 1.6; background: #f7f9fc; }
 
     header {
       text-align: center;
-      padding: 60px 20px 30px;
-      background: white;
+      padding: 80px 20px 50px;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
     }
 
     header img {
-      max-width: 220px;
+      max-width: 180px;
       margin-bottom: 20px;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
     }
 
     h1 {
-      margin: 0;
-      font-size: 2.5em;
+      font-size: 3em;
       color: #1e3a5f;
+      margin-bottom: 10px;
+      animation: slideUp 1s ease forwards;
+      opacity: 0;
+      animation-delay: 0.3s;
     }
 
     .tagline {
-      font-size: 1.2em;
+      font-size: 1.3em;
       color: #555;
-      margin-top: 10px;
+      animation: slideUp 1s ease forwards;
+      opacity: 0;
+      animation-delay: 0.5s;
     }
 
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
     .intro {
-      font-size: 1.1em;
+      font-size: 1.15em;
       text-align: center;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 0.7s;
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
     }
 
     .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      transform: translateY(30px);
+      opacity: 0;
+      animation: cardFade 0.8s forwards;
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: #1e3a5f;
-    }
+    .card:nth-child(1) { animation-delay: 0.9s; }
+    .card:nth-child(2) { animation-delay: 1.1s; }
+    .card:nth-child(3) { animation-delay: 1.3s; }
+    .card:nth-child(4) { animation-delay: 1.5s; }
+
+    .card h3 { color: #1e3a5f; margin-bottom: 10px; }
+    .card p { color: #555; }
 
     footer {
       text-align: center;
       padding: 30px;
       font-size: 0.9em;
       color: #777;
+      background: #fff;
+      margin-top: 50px;
     }
+
+    /* Animations */
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes slideUp { from { opacity:0; transform: translateY(20px);} to { opacity:1; transform: translateY(0);} }
+    @keyframes cardFade { from { opacity:0; transform: translateY(30px);} to { opacity:1; transform: translateY(0);} }
+
   </style>
 </head>
 
@@ -80,6 +105,7 @@
 
   <header>
     <img src="logo.png" alt="Neo Kairos Logo">
+    <h1>Neo Kairos</h1>
     <div class="tagline">The right moment, redefined.</div>
   </header>
 
